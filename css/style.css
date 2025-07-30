@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+:root {
+    --darkblue: #001C30;
+    --blue: #176B87;
+    --teal: #64CCC5;
+    --white: #DAFFFB;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+
+/* Header container */
+.navbar-container {
+    display: flex;
+    background-color: var(--darkblue);
+    position: fixed; /* Set navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+}
+
+/* Navigation container */
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 30px;
+    padding: 1.4rem 7%;
+    /* border-bottom: 1px solid var(--white); */
+}
+
+/* Logo */
+.logo {
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+#normal {
+  font-weight: 300;
+    color: var(--teal);
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigation > li {
+    list-style-type: none;
+    padding: 0 3.5rem;
+}
+
+.navigation > li > a {
+    color: white;
+    text-decoration: none;
+    padding-bottom: 5px;
+    background-image: linear-gradient(#64CCC5 0 0);
+    background-position: 0 100%;
+    background-size: 0% 3px;
+    background-repeat: no-repeat;
+    transition: background-size 0.3s,
+        background-position 0s 0.3s;
+}
+
+.navigation > li > a:hover {
+    color: var(--teal);
+    background-position: 100% 100%;
+    background-size: 100% 3px;
+}
+
+.navigation > li > a:focus {
+    transition: .5s;
+}
+
+.nav-extra a {
+    color: white;
+}
+
+.nav-extra a:hover {
+    color: var(--teal);
+}
+
+#hamburger-menu {
+    display: none;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 115px 75px;
+    background-color: var(--darkblue);
+}
+
+#info {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+#info h2 {
+    font-size: 60px;
+}
+
+#info h2 span {
+    color: var(--teal);
+}
+
+#info a {
+    text-decoration: none;
+    color: var(--darkblue);
+}
+
+#cta-button {
+   margin: 30px 10px;
+   background-color: var(--white);
+   width: 150px;
+   padding: 20px;
+   border-radius: 10px;
+   transition: all 0.2s ease-in-out;
+}
+
+#cta-button:hover {
+    background-color: var(--teal);
+}
+
+#hero-image {
+  width: 500px;
+  border-radius: 10px;
+}
+
+/* Barang Section */
+#barang {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+#barang article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 35px 15px;
+  height: 300px;
+  width: 450px;
+  border-radius: 10px;
+  color: var(--darkblue);
+  border: 1.5px solid var(--darkblue);
+    text-align: center;
+}
+
+#barang article:hover {
+  background-color: var(--darkblue);
+  color: white;
+  transition: all 0.2s ease-in-out;
+}
+
+#barang article img + p {
+  padding: 15px;
+}
+
+#barang img {
+  width: 80%;
+  border-radius: 10px;
+}
+
+/* Aside Section */
+#tentang {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 35px;
+    color: var(--darkblue);
+}
+
+#tentang img {
+  width: 250px;
+  border-radius: 10px;
+  }
+
+/* Footer Section */
+footer {
+    display: flex;
+    background: var(--darkblue);
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    .hero {
+        flex-direction: column-reverse;
+    }
+
+    #info h2 {
+        font-size: 30px;
+    }
+
+    #hero-image {
+      width: 450px;
+    }
+}
+
+@media (max-width: 768px) {
+    #hero-image {
+        width: 250px;
+    }
+
+    .navigation {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: var(--white);
+        width: 30rem;
+        height: 100vh;
+        transition: 0.3s;
+    }
+
+    .navigation.active li a {
+        color: var(--darkblue);
+    }
+
+    .navigation.active {
+        right: 0;
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    #hamburger-menu {
+        display: inline-block;
+    }
+}
